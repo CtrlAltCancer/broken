@@ -1,0 +1,223 @@
+Svolgimento esercizio S1/L2 Indirizzi:
+Guida dec/bin
+128+64+32+16 + 8+4+2+1
+
+1.1.1.1/8
+128.1.6.5/12
+200.1.2.3/24
+192.192.1.1/22
+126.5.4.3/9
+200.1.9.8/24
+172.16.0.4/16
+
+
+1.1.1.1/8
+Subnet: 255.0.0.0
+IP in binari:
+00000001.00000001.00000001.00000001
+Subnet in binari:
+11111111.00000000.00000000.00000000
+Subnet in decimali:
+255.0.0.0
+AND per trovare indirizzo Network:
+00000001.00000000.00000000.00000000
+= 1.0.0.0
+Gateway = Primo indirizzo dopo Network = 1.0.0.1
+
+OR dopo inversione Subnet per trovare Broadcast:
+00000000.11111111.11111111.11111111 RevSub
+00000001.00000001.00000001.00000001 IP
+Risulta
+00000001.11111111.11111111.11111111
+= 1.255.255.255
+
+Indirizzi disponibili
+(256*256*256) - 2 =
+16'777'216 - 2 = 16'777'214 exc. Network e Broadcast
+
+Calcolo Host con CIDR /8
+XXXXXXXX.00000000.00000000.00000000
+00000001.00000001.00000001.00000001 IP
+quindi
+1.1.1
+
+128.1.6.5/12
+IP in binari:
+10000000.00000001.00000110.00000101
+Subnet in binari:
+11111111.11110000.00000000.00000000
+Subnet in decimali:
+255.240.0.0
+AND per trovare indirizzo Network:
+10000000.00000000.00000000.00000000
+= 128.0.0.0
+Gateway = Primo indirizzo dopo Network = 128.0.0.1
+
+OR dopo inversione Subnet per trovare Broadcast:
+00000000.00001111.11111111.11111111 RevSub
+10000000.00000001.00000110.00000101 IP
+Risulta
+10000000.00001111.11111111.11111111
+128.15.255.255
+
+Indirizzi disponibili
+16(256*256)=
+16 * 65536 =
+1'048'576 - 2 = 1'048'574 exc. Network e Broadcast
+
+Calcolo Host con CIDR /12
+XXXXXXXX.XXXX0000.00000000.00000000
+10000000.00000001.00000110.00000101 IP
+quindi
+1.6.5
+
+
+200.1.2.3/24
+IP in binari:
+11001000.00000001.00000010.00000011
+Subnet in binari:
+11111111.11111111.11111111.00000000
+Subnet in decimali:
+255.255.255.0
+AND per trovare indirizzo Network:
+11001000.00000001.00000010.00000000
+= 200.1.2.0
+Gateway = Primo indirizzo dopo Network = 200.1.2.1
+
+OR dopo inversione Subnet per trovare Broadcast:
+00000000.00000000.00000000.11111111 RevSub
+11001000.00000001.00000010.00000011 IP
+Risulta
+11001000.00000001.00000010.11111111
+200.1.2.255
+
+Indirizzi disponibili
+256 - 2 = 254 exc. Network e Broadcast
+
+Calcolo Host con CIDR /24
+XXXXXXXX.XXXXXXXX.XXXXXXXX.00000000
+11001000.00000001.00000010.00000011 IP
+quindi
+3
+
+
+192.192.1.1/22
+IP in binari:
+11000000.11000000.00000001.00000001
+Subnet in binari:
+11111111.11111111.11111100.00000000
+Subnet in decimali:
+255.255.252.0
+AND per trovare indirizzo Network:
+11000000.11000000.00000000.00000000
+= 192.192.0.0
+Gateway = Primo indirizzo dopo Network = 192.192.0.1
+
+OR dopo inversione Subnet per trovare Broadcast:
+00000000.00000000.00000011.11111111 RevSub
+11000000.11000000.00000001.00000001 IP
+Risulta
+11000000.11000000.00000011.11111111
+192.192.3.255
+
+Indirizzi disponibili:
+4*256 =
+1024 - 2 exc. Network e Broadcast
+
+Calcolo Host con CIDR /22
+XXXXXXXX.XXXXXXXX.XXXXXX00.00000000
+11000000.11000000.00000001.00000001 IP
+quindi
+1.1
+
+
+
+126.5.4.3/9
+IP in binari:
+01111110.00000101.00000100.00000011
+Subnet in binari:
+11111111.10000000.00000000.00000000
+Subnet in decimali:
+255.128.0.0
+AND per trovare indirizzo Network:
+01111110.00000000.00000000.00000000
+= 126.0.0.0
+Gateway = Primo indirizzo dopo Network = 126.0.0.1
+
+OR dopo inversione Subnet per trovare Broadcast:
+00000000.01111111.11111111.11111111 RevSub
+01111110.00000101.00000100.00000011 IP
+Risulta
+01111110.01111111.11111111.11111111
+126.127.255.255
+
+Indirizzi disponibili:
+128*(256*256) =
+128*(65536) =
+8'388'608 - 2 = 8'388'606 exc. Network e Broadcast
+
+Calcolo Host con CIDR /9
+XXXXXXXX.X0000000.00000000.00000000
+01111110.00000101.00000100.00000011 IP
+quindi
+5.4.3
+
+
+
+200.1.9.8/24
+IP in binari:
+11001000.00000001.00001001.00001000
+Subnet in binari:
+11111111.11111111.11111111.00000000
+Subnet in decimali:
+255.255.255.0
+AND per trovare indirizzo Network:
+11001000.00000001.00001001.00000000
+= 200.1.9.0
+Gateway = Primo indirizzo dopo Network = 200.1.9.1
+
+OR dopo inversione Subnet per trovare Broadcast:
+00000000.00000000.00000000.11111111 RevSub
+11001000.00000001.00001001.00001000 IP
+Risulta
+11001000.00000001.00001001.11111111
+200.1.9.255
+
+Indirizzi disponibili
+256 - 2 = 254 exc. Network e Broadcast
+
+Calcolo Host con CIDR /24
+XXXXXXXX.XXXXXXXX.XXXXXXXX.00000000
+11001000.00000001.00001001.00001000 IP
+quindi
+8
+
+
+
+172.16.0.4/16
+IP in binari:
+10101100.00010000.00000000.00000100
+Subnet in binari:
+11111111.11111111.00000000.00000000
+Subnet in decimali:
+255.255.0.0
+AND per trovare indirizzo Network:
+10101100.00010000.00000000.00000000
+= 172.16.0.0
+Gateway = Primo indirizzo dopo Network = 172.16.0.1
+
+OR dopo inversione Subnet per trovare Broadcast:
+00000000.00000000.11111111.11111111 RevSub
+10101100.00010000.00000000.00000100 IP
+Risulta
+10101100.00010000.11111111.11111111
+172.16.255.255
+
+Indirizzi disponibili:
+256 * 256 = 65536 - 2 = 65534 exc. Network e Broadcast
+
+Calcolo Host con CIDR /16
+XXXXXXXX.XXXXXXXX.00000000.00000000
+10101100.00010000.00000000.00000100 IP
+quindi
+4
